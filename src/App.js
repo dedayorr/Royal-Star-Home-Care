@@ -8,11 +8,13 @@ import Services from './pages/Services';
 import Referrals from './pages/Referrals';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

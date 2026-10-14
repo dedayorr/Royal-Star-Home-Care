@@ -1,24 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
 @layer base {
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-  a { text-decoration: none; color: inherit; }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Inter", sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
-
 @layer utilities {
-  .section-pad { @apply py-16 md:py-24 px-6; }
-  .container-max { @apply max-w-6xl mx-auto; }
-  .btn-primary { @apply bg-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-secondary hover:-translate-y-0.5; }
-  .btn-outline { @apply border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-primary hover:text-white hover:-translate-y-0.5; }
-  .btn-white { @apply bg-white text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blush hover:-translate-y-0.5; }
-  .btn-outline-white { @apply border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-white hover:text-primary; }
-  .card { @apply bg-white rounded-2xl p-8 border border-soft/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-secondary/40; }
-  .label { @apply text-xs font-semibold tracking-widest uppercase text-secondary mb-3; }
+  .section-pad {
+    @apply py-16 md:py-24 px-6;
+  }
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-secondary hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-primary hover:text-white hover:-translate-y-0.5;
+  }
+  .btn-white {
+    @apply bg-white text-primary px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-blush hover:-translate-y-0.5;
+  }
+  .btn-outline-white {
+    @apply border-2 border-white text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:bg-white hover:text-primary;
+  }
+  .card {
+    @apply bg-white rounded-2xl p-8 border border-soft/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-secondary/40;
+  }
+  .label {
+    @apply text-xs font-semibold tracking-widest uppercase text-secondary mb-3;
+  }
 }

@@ -1,79 +1,138 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import AnimatedSection from '../components/AnimatedSection';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import AnimatedSection from "../components/AnimatedSection";
 
 const categories = [
   {
-    id: 'pediatric',
-    label: 'Pediatric Nursing',
-    icon: '👶',
-    headline: 'Specialized Care for Children',
-    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop',
-    desc: 'Our pediatric nurses provide expert, compassionate care for infants, children, and adolescents with medical needs — in the safety and comfort of home.',
-    features: ['Newborn & infant care', 'Pediatric wound care', 'Medication administration', 'Developmental monitoring', 'Post-surgical recovery', 'Family education & support'],
+    id: "pediatric",
+    label: "Pediatric Nursing",
+    icon: "👶",
+    headline: "Specialized Care for Children",
+    image:
+      "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop",
+    desc: "Our pediatric nurses provide expert, compassionate care for infants, children, and adolescents with medical needs — in the safety and comfort of home.",
+    features: [
+      "Newborn & infant care",
+      "Pediatric wound care",
+      "Medication administration",
+      "Developmental monitoring",
+      "Post-surgical recovery",
+      "Family education & support",
+    ],
   },
   {
-    id: 'skilled',
-    label: 'Skilled Nursing',
-    icon: '🩺',
-    headline: 'Advanced Clinical Nursing at Home',
-    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&auto=format&fit=crop',
-    desc: 'Our licensed skilled nurses deliver high-quality medical care at home — from complex wound management to chronic disease monitoring and IV therapy.',
-    features: ['Wound care & dressing changes', 'IV therapy & injections', 'Catheter & ostomy care', 'Chronic disease management', 'Medication management', 'Vital signs monitoring'],
+    id: "skilled",
+    label: "Skilled Nursing",
+    icon: "🩺",
+    headline: "Advanced Clinical Nursing at Home",
+    image:
+      "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&auto=format&fit=crop",
+    desc: "Our licensed skilled nurses deliver high-quality medical care at home — from complex wound management to chronic disease monitoring and IV therapy.",
+    features: [
+      "Wound care & dressing changes",
+      "IV therapy & injections",
+      "Catheter & ostomy care",
+      "Chronic disease management",
+      "Medication management",
+      "Vital signs monitoring",
+    ],
   },
   {
-    id: 'companion',
-    label: 'Companion Services',
-    icon: '💛',
-    headline: 'Meaningful Companionship & Support',
-    image: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&auto=format&fit=crop',
-    desc: 'Our compassionate companions provide consistent social engagement, emotional support, and friendly presence — reducing isolation and improving quality of life.',
-    features: ['Friendly conversation & engagement', 'Reading & cognitive activities', 'Hobbies & light recreation', 'Meal preparation & company', 'Errand assistance', 'Family peace of mind'],
+    id: "companion",
+    label: "Companion Services",
+    icon: "💛",
+    headline: "Meaningful Companionship & Support",
+    image:
+      "https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&auto=format&fit=crop",
+    desc: "Our compassionate companions provide consistent social engagement, emotional support, and friendly presence — reducing isolation and improving quality of life.",
+    features: [
+      "Friendly conversation & engagement",
+      "Reading & cognitive activities",
+      "Hobbies & light recreation",
+      "Meal preparation & company",
+      "Errand assistance",
+      "Family peace of mind",
+    ],
   },
   {
-    id: 'respite',
-    label: 'Respite Care',
-    icon: '🌿',
-    headline: 'Relief for Family Caregivers',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
-    desc: 'Caring for a loved one is deeply rewarding — and exhausting. Our respite care gives family caregivers the rest they deserve while their loved one remains in trusted hands.',
-    features: ['Temporary relief for family caregivers', 'Flexible scheduling — hourly or daily', 'Personal care & hygiene assistance', 'Medication reminders', 'Safety supervision', 'Emotional support for clients'],
+    id: "respite",
+    label: "Respite Care",
+    icon: "🌿",
+    headline: "Relief for Family Caregivers",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop",
+    desc: "Caring for a loved one is deeply rewarding — and exhausting. Our respite care gives family caregivers the rest they deserve while their loved one remains in trusted hands.",
+    features: [
+      "Temporary relief for family caregivers",
+      "Flexible scheduling — hourly or daily",
+      "Personal care & hygiene assistance",
+      "Medication reminders",
+      "Safety supervision",
+      "Emotional support for clients",
+    ],
   },
   {
-    id: 'transport',
-    label: 'Transportation',
-    icon: '🚗',
+    id: "transport",
+    label: "Transportation",
+    icon: "🚗",
     headline: "Getting to Appointments Safely",
-    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop',
+    image:
+      "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop",
     desc: "Missing doctor's appointments shouldn't happen because of transportation. We provide safe, reliable rides to medical visits, ensuring clients never miss critical care.",
-    features: ["Doctor's appointment transport", 'Physical therapy trips', 'Specialist visits', 'Pharmacy runs', 'Safe door-to-door assistance', 'Punctual & reliable scheduling'],
+    features: [
+      "Doctor's appointment transport",
+      "Physical therapy trips",
+      "Specialist visits",
+      "Pharmacy runs",
+      "Safe door-to-door assistance",
+      "Punctual & reliable scheduling",
+    ],
   },
 ];
 
 export default function Services() {
-  const [active, setActive] = useState('pediatric');
-  const current = categories.find(c => c.id === active);
+  const [active, setActive] = useState("pediatric");
+  const current = categories.find((c) => c.id === active);
 
   return (
     <main className="pt-[72px]">
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
-          <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">What We Provide</p>
-          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>Our Services</h1>
-          <p className="text-white max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
-            Comprehensive home care built around what each person truly needs — medically, personally, and emotionally.
+          <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">
+            What We Provide
+          </p>
+          <h1
+            className="font-serif text-white mb-5 font-bold"
+            style={{ fontSize: "clamp(35px,6vw,64px)" }}
+          >
+            Our Services
+          </h1>
+          <p
+            className="text-white max-w-xl mx-auto leading-relaxed"
+            style={{ fontSize: "clamp(20px,2vw,17px)" }}
+          >
+            Comprehensive home care built around what each person truly needs —
+            medically, personally, and emotionally.
           </p>
         </AnimatedSection>
       </section>
 
       {/* Tab Nav */}
       <div className="bg-white border-b border-soft/20 sticky top-[72px] z-40 px-6">
-        <div className="max-w-6xl mx-auto flex overflow-x-auto gap-1 py-1" style={{ scrollbarWidth: 'thin' }}>
-          {categories.map(c => (
-            <button key={c.id} onClick={() => setActive(c.id)}
+        <div
+          className="max-w-6xl mx-auto flex overflow-x-auto gap-1 py-1"
+          style={{ scrollbarWidth: "thin" }}
+        >
+          {categories.map((c) => (
+            <button
+              key={c.id}
+              onClick={() => setActive(c.id)}
               className={`px-4 py-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
-                active === c.id ? 'border-secondary text-primary' : 'border-transparent text-gray-400 hover:text-primary'
-              }`}>
+                active === c.id
+                  ? "border-secondary text-primary"
+                  : "border-transparent text-gray-400 hover:text-primary"
+              }`}
+            >
               {c.icon} {c.label}
             </button>
           ))}
@@ -94,24 +153,35 @@ export default function Services() {
               />
               <div className="p-8 text-white">
                 <div className="text-4xl mb-4">{current.icon}</div>
-                <h2 className="font-serif text-2xl md:text-3xl mb-3">{current.headline}</h2>
-                <p className="text-blush/85 leading-relaxed text-sm">{current.desc}</p>
+                <h2 className="font-serif text-2xl md:text-3xl mb-3">
+                  {current.headline}
+                </h2>
+                <p className="text-blush/85 leading-relaxed text-xl">
+                  {current.desc}
+                </p>
               </div>
             </div>
           </AnimatedSection>
 
-          <AnimatedSection direction="right" key={active + '-f'}>
-            <h3 className="font-serif text-2xl text-primary mb-6">What's Included</h3>
+          <AnimatedSection direction="right" key={active + "-f"}>
+            <h3 className="font-serif text-2xl text-primary mb-6">
+              What's Included
+            </h3>
             <div className="flex flex-col gap-3">
-              {current.features.map(f => (
-                <div key={f} className="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-soft/20">
+              {current.features.map((f) => (
+                <div
+                  key={f}
+                  className="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-soft/20"
+                >
                   <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
-                  <span className="text-gray-600 text-sm">{f}</span>
+                  <span className="text-gray-600 text-l">{f}</span>
                 </div>
               ))}
             </div>
             <NavLink to="/contact" className="inline-block mt-8">
-              <button className="btn-primary">Inquire About This Service →</button>
+              <button className="btn-primary">
+                Inquire About This Service →
+              </button>
             </NavLink>
           </AnimatedSection>
         </div>
@@ -121,13 +191,18 @@ export default function Services() {
       <section className="section-pad bg-white">
         <div className="container-max">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl text-primary">All Care Services at a Glance</h2>
+            <h2 className="font-serif text-3xl font-bold md:text-4xl text-primary">
+              All Care Services at a Glance
+            </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((c, i) => (
               <AnimatedSection key={c.id} delay={i * 0.08} direction="up">
                 <div
-                  onClick={() => { setActive(c.id); window.scrollTo({ top: 200, behavior: 'smooth' }); }}
+                  onClick={() => {
+                    setActive(c.id);
+                    window.scrollTo({ top: 200, behavior: "smooth" });
+                  }}
                   className="group rounded-xl overflow-hidden cursor-pointer border border-soft/20 hover:shadow-xl transition-all duration-300"
                 >
                   {/* Card image */}
@@ -140,8 +215,12 @@ export default function Services() {
                   </div>
                   <div className="bg-blush/10 group-hover:bg-primary p-6 transition-colors duration-300">
                     <div className="text-2xl mb-2">{c.icon}</div>
-                    <h3 className="font-serif text-lg text-primary group-hover:text-blush mb-1 transition-colors">{c.label}</h3>
-                    <p className="text-xs text-gray-500 group-hover:text-blush/70 leading-relaxed transition-colors">{c.desc.slice(0, 75)}...</p>
+                    <h3 className="font-serif text-xl text-primary group-hover:text-blush mb-1 transition-colors">
+                      {c.label}
+                    </h3>
+                    <p className="text-l text-gray-500 group-hover:text-blush/70 leading-relaxed transition-colors">
+                      {c.desc.slice(0, 75)}...
+                    </p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -152,9 +231,19 @@ export default function Services() {
 
       <section className="section-pad bg-blush text-center">
         <AnimatedSection>
-          <h2 className="font-serif text-primary mb-4" style={{ fontSize: 'clamp(22px,4vw,40px)' }}>Not Sure Which Service You Need?</h2>
-          <p className="text-gray-600 max-w-md mx-auto mb-8 leading-relaxed">Our care coordinators will assess your situation and recommend the right services — no pressure.</p>
-          <NavLink to="/contact"><button className="btn-primary">Talk to a Care Coordinator</button></NavLink>
+          <h2
+            className="font-serif text-primary mb-4"
+            style={{ fontSize: "clamp(22px,4vw,40px)" }}
+          >
+            Not Sure Which Service You Need?
+          </h2>
+          <p className="text-gray-600 max-w-md mx-auto mb-8 leading-relaxed">
+            Our care coordinators will assess your situation and recommend the
+            right services — no pressure.
+          </p>
+          <NavLink to="/contact">
+            <button className="btn-primary">Talk to a Care Coordinator</button>
+          </NavLink>
         </AnimatedSection>
       </section>
     </main>

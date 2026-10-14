@@ -4,19 +4,19 @@ import logo from "../assets/royal_logo2.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-blush pt-16 pb-8 px-6">
+    <footer className="bg-primary pt-16 pb-8 px-6 text-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 ">
               <img
                 src={logo}
                 alt="Royal Star Home Care Services Inc."
-                className="h-14 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             </div>
-            <p className="text-xl text-blush/60 leading-relaxed max-w-xs">
+            <p className="text-2xl text-white leading-relaxed max-w-xs">
               Professional home care built around the dignity, comfort, and
               individual needs of every client we serve.
             </p>
@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif mb-4 text-soft font-bold text-xl">Quick Links</h4>
+            <h4 className="font-serif mb-4 text-white font-bold text-2xl">Quick Links</h4>
             {[
               ["/", "Home"],
               ["/about", "About Us"],
@@ -36,7 +36,7 @@ export default function Footer() {
               <NavLink
                 key={to}
                 to={to}
-                className="block text-l text-blush/60 mb-2 hover:text-blush transition-colors"
+                className="block text-xl text-white mb-2 hover:text-blush transition-colors"
               >
                 {label}
               </NavLink>
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif mb-4 text-soft font-bold text-xl">
+            <h4 className="font-serif mb-4 text-white font-bold text-2xl">
               Our Services
             </h4>
             {[
@@ -56,7 +56,7 @@ export default function Footer() {
               "Transportation to Doctor's Appointment"
           
             ].map((s) => (
-              <div key={s} className="text-l text-blush/60 mb-2">
+              <div key={s} className="text-xl text-white mb-2">
                 {s}
               </div>
             ))}
@@ -64,8 +64,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif mb-4 text-soft font-bold text-xl">Contact Us</h4>
-            <div className="text-xl text-blush/60 space-y-2 leading-relaxed">
+            <h4 className="font-serif mb-4 text-white font-bold text-2xl">Contact Us</h4>
+            <div className="text-xl text-white space-y-2 leading-relaxed">
               <div>
                 📍 1730 Powder Horn Drive
                 <br />

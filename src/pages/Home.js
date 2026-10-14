@@ -84,7 +84,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="inline-block bg-primary/30 border border-blush/40 rounded-full px-5 py-1.5 mb-7"
           >
-            <span className="text-xs text-blush tracking-widest ">
+            <span className="text-l text-blush tracking-widest ">
               Trust Home Care
             </span>
           </motion.div>
@@ -94,7 +94,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
             className="font-serif font-bold text-white leading-tight mb-6"
-            style={{ fontSize: "clamp(36px, 7vw, 76px)" }}
+            style={{ fontSize: "clamp(40px, 7vw, 76px)" }}
           >
             Care That Honors
             <br />
@@ -161,12 +161,12 @@ export default function Home() {
                 and trusted faces.
               </p>
               <div className="border-t border-white/20 pt-6">
-                <div className="text-l text-soft tracking-widest uppercase mb-2">
+                <div className="text-xl text-white tracking-widest uppercase mb-2">
                   📞 Call Us Anytime
                 </div>
                 <a
                   href="tel:+12244544186"
-                  className="font-serif text-xl text-blush font-bold hover:text-white transition-colors"
+                  className="font-serif text-2xl text-white font-bold hover:text-white transition-colors"
                 >
                   +1 (224) 454-4186
                 </a>

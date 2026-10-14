@@ -24,8 +24,8 @@ export default function About() {
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">Our Story</p>
-          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>About Royal Star Home Care</h1>
-          <p className="text-white max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
+          <h1 className="font-serif text-white mb-5 text-[30px] font-bold" >About Us</h1>
+          <p className="text-white max-w-xl mx-auto leading-relaxed text-[20px]">
             A family of caregivers committed to making life at home safer, fuller, and more dignified — every single day.
           </p>
         </AnimatedSection>
@@ -36,21 +36,21 @@ export default function About() {
         <div className="container-max grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           <AnimatedSection direction="left">
             <p className="label">Our Mission</p>
-            <h2 className="font-serif text-primary mb-5 leading-tight" style={{ fontSize: 'clamp(22px,3.5vw,40px)' }}>
+            <h2 className="font-serif text-primary mb-5 leading-tight text-2xl font-bold" >
               Caring for People the Way We'd Care for Our Own
             </h2>
-            <p className="text-gray-500 leading-relaxed mb-4">
+            <p className="text-gray-500 leading-relaxed mb-4 text-[20px]">
               Royal Star Home Care was founded on a simple belief: every person deserves professional care delivered with genuine compassion — not just services rendered, but lives enriched.
             </p>
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-gray-500 leading-relaxed text-[20px]">
               From our first day, we have built every care plan around the individual — their medical needs, their personal preferences, their family dynamics, and their vision of a good life at home.
             </p>
           </AnimatedSection>
 
           <AnimatedSection direction="right">
             <div className="bg-gradient-to-br from-blush/30 to-white rounded-2xl p-8 border border-soft/30">
-              <h3 className="font-serif text-2xl text-primary mb-4">Our Vision</h3>
-              <p className="text-gray-500 leading-relaxed mb-6">
+              <h3 className="font-serif text-2xl text-primary mb-4 font-bold">Our Vision</h3>
+              <p className="text-gray-500 leading-relaxed mb-6 text-xl">
                 To be the most trusted name in home care in Illinois — known not just for clinical excellence, but for the relationships we build with every family we serve.
               </p>
 
@@ -65,8 +65,8 @@ export default function About() {
               </div>
 
               <div className="border-t border-soft/40 pt-5">
-                <h3 className="font-serif text-2xl text-primary mb-3">Licensed & Insured</h3>
-                <p className="text-gray-500 leading-relaxed text-sm">
+                <h3 className="font-serif text-2xl text-primary mb-3 font-bold">Licensed & Insured</h3>
+                <p className="text-gray-500 leading-relaxed text-xl">
                   Royal Star Home Care Services Inc. is fully licensed, bonded, and insured — giving families complete peace of mind.
                 </p>
               </div>
@@ -80,15 +80,15 @@ export default function About() {
         <div className="container-max">
           <AnimatedSection className="text-center mb-14">
             <p className="label">What Guides Us</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-primary">Our Core Values</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-primary font-bold">Our Core Values</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 0.1} direction="up">
                 <div className="card h-full">
                   <div className="text-3xl mb-4">{v.icon}</div>
-                  <h3 className="font-serif text-xl text-primary mb-3">{v.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">{v.desc}</p>
+                  <h3 className="font-serif text-2xl text-primary mb-3 font-semibold">{v.title}</h3>
+                  <p className=" text-gray-500 leading-relaxed text-xl">{v.desc}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -101,7 +101,7 @@ export default function About() {
         <div className="container-max">
           <AnimatedSection className="text-center mb-14">
             <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">The People Behind the Care</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-blush">Our Team</h2>
+            <h2 className="font-serif text-3xl font-bold md:text-4xl text-white">Our Team</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {team.map((t, i) => (
@@ -109,8 +109,8 @@ export default function About() {
                 <div className="bg-white/10 rounded-2xl p-8 border border-white/10">
                   <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mb-5 text-2xl">⭐</div>
                   <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-2">{t.role}</p>
-                  <h3 className="font-serif text-xl text-blush mb-3">{t.name}</h3>
-                  <p className="text-sm text-blush/65 leading-relaxed">{t.desc}</p>
+                  <h3 className="font-serif text-2xl text-white font-bold mb-3">{t.name}</h3>
+                  <p className="text-xl text-blush/65 leading-relaxed">{t.desc}</p>
                 </div>
               </AnimatedSection>
             ))}

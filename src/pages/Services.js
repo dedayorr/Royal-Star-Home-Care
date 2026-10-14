@@ -92,7 +92,7 @@ export default function Services() {
                 className="w-full object-cover"
                 style={{ height: 220 }}
               />
-              <div className="p-8 text-blush">
+              <div className="p-8 text-white">
                 <div className="text-4xl mb-4">{current.icon}</div>
                 <h2 className="font-serif text-2xl md:text-3xl mb-3">{current.headline}</h2>
                 <p className="text-blush/85 leading-relaxed text-sm">{current.desc}</p>

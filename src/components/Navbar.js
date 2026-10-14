@@ -59,10 +59,10 @@ export default function Navbar() {
               to={l.to}
               end={l.to === "/"}
               className={({ isActive }) =>
-                `px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 border-b-2 ${
+                `px-4 py-2 rounded-md text-whe text-sm font-medium transition-all duration-200 border-b-2 ${
                   isActive
-                    ? "text-blush border-blush bg-white/10"
-                    : "text-blush/80 border-transparent hover:text-blush hover:bg-white/10"
+                    ? "text-black border-blush bg-white/10 "
+                    : " border-transparent hover:text-white hover:bg-white/10"
                 }`
               }
             >
@@ -70,7 +70,7 @@ export default function Navbar() {
             </NavLink>
           ))}
           <NavLink to="/contact">
-            <button className="ml-3 px-5 py-2 bg-blush text-primary rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-soft hover:text-white">
+            <button className="ml-3 px-5 py-2 bg-blush text-primary rounded-lg text-sm font-semibold transition-all duration-200 hover:bg-soft hover:text">
               Get Care
             </button>
           </NavLink>
@@ -93,7 +93,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-primary border-t border-white/10 overflow-hidden"
+            className="md:hidden bg-primary border-t border-white/10 overflow-hidden "
           >
             {links.map((l) => (
               <NavLink
@@ -101,9 +101,9 @@ export default function Navbar() {
                 to={l.to}
                 end={l.to === "/"}
                 className={({ isActive }) =>
-                  `block px-6 py-4 text-base border-b border-white/10 transition-colors ${
+                  `block px-6 py-4 text-[20px] text-base border-b border-white/10 transition-colors  ${
                     isActive
-                      ? "text-blush bg-white/10"
+                      ? "text-blush bg-white/10 "
                       : "text-blush/80 hover:text-blush hover:bg-white/10"
                   }`
                 }

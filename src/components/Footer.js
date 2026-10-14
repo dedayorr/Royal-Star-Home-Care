@@ -16,7 +16,7 @@ export default function Footer() {
                 className="h-14 w-auto object-contain"
               />
             </div>
-            <p className="text-sm text-blush/60 leading-relaxed max-w-xs">
+            <p className="text-xl text-blush/60 leading-relaxed max-w-xs">
               Professional home care built around the dignity, comfort, and
               individual needs of every client we serve.
             </p>
@@ -24,7 +24,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-base mb-4 text-soft">Quick Links</h4>
+            <h4 className="font-serif mb-4 text-soft font-bold text-xl">Quick Links</h4>
             {[
               ["/", "Home"],
               ["/about", "About Us"],
@@ -36,7 +36,7 @@ export default function Footer() {
               <NavLink
                 key={to}
                 to={to}
-                className="block text-sm text-blush/60 mb-2 hover:text-blush transition-colors"
+                className="block text-l text-blush/60 mb-2 hover:text-blush transition-colors"
               >
                 {label}
               </NavLink>
@@ -45,18 +45,18 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-serif text-base mb-4 text-soft">
+            <h4 className="font-serif mb-4 text-soft font-bold text-xl">
               Our Services
             </h4>
             {[
+              "Pediatric Nursing",
               "Skilled Nursing",
-              "Private Duty Nursing",
-              "Personal Care",
-              "Companion Care",
-              "Physical Therapy",
-              "Home Health",
+              "Companion Services",
+              "Respite Care",
+              "Transportation to Doctor's Appointment"
+          
             ].map((s) => (
-              <div key={s} className="text-sm text-blush/60 mb-2">
+              <div key={s} className="text-l text-blush/60 mb-2">
                 {s}
               </div>
             ))}
@@ -64,8 +64,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-base mb-4 text-soft">Contact Us</h4>
-            <div className="text-sm text-blush/60 space-y-2 leading-relaxed">
+            <h4 className="font-serif mb-4 text-soft font-bold text-xl">Contact Us</h4>
+            <div className="text-xl text-blush/60 space-y-2 leading-relaxed">
               <div>
                 📍 1730 Powder Horn Drive
                 <br />
@@ -79,7 +79,7 @@ export default function Footer() {
                   📞 +1 (224) 454-4186
                 </a>
               </div>
-              <div className="break-words">
+              <div className="break-words font-bold">
                 <a
                   href="mailto:royalstarhomecareservicesinc@gmail.com"
                   className="hover:text-blush transition-colors"

@@ -20,8 +20,8 @@ export default function Referrals() {
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">For Healthcare Professionals</p>
-          <h1 className="font-serif text-blush mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>Patient Referrals</h1>
-          <p className="text-blush/80 max-w-xl mx-auto leading-relaxed">Refer a patient to Royal Star Home Care and trust that they'll receive the same standard of care you would want for your own family.</p>
+          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>Patient Referrals</h1>
+          <p className="text-white max-w-xl mx-auto leading-relaxed">Refer a patient to Royal Star Home Care and trust that they'll receive the same standard of care you would want for your own family.</p>
         </AnimatedSection>
       </section>
 

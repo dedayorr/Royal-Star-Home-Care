@@ -20,8 +20,8 @@ export default function Blog() {
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">Resources & Insights</p>
-          <h1 className="font-serif text-blush mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>The Royal Star Blog</h1>
-          <p className="text-blush/80 max-w-xl mx-auto leading-relaxed">Practical guidance, care insights, and family resources — from the people who do this every day.</p>
+          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>The Royal Star Blog</h1>
+          <p className="text-white max-w-xl mx-auto leading-relaxed">Practical guidance, care insights, and family resources — from the people who do this every day.</p>
         </AnimatedSection>
       </section>
 

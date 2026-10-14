@@ -3,16 +3,55 @@ import { NavLink } from 'react-router-dom';
 import AnimatedSection from '../components/AnimatedSection';
 
 const categories = [
-  { id: 'health',    label: 'Home Health',        icon: '🏥', headline: 'Medical Care at Home',           desc: 'Our home health services bring professional medical care into your home, coordinated by our clinical team and tailored to your recovery or long-term health goals.', features: ['Post-surgery recovery care','Chronic disease management','Medication administration & education','Vital signs monitoring','Coordination with your physician','Health status reporting'] },
-  { id: 'nursing',   label: 'Home Nursing',        icon: '💉', headline: 'Skilled Nursing Services',       desc: 'Our licensed nurses provide advanced clinical care in the comfort of your home — from complex wound care to IV therapy and disease management.', features: ['Wound care & dressing changes','IV therapy','Catheter care','Ostomy care','Medication management','Patient & family education'] },
-  { id: 'caregiver', label: 'Caregiver Services',  icon: '🤝', headline: 'Compassionate Caregiver Support', desc: 'Our trained caregivers assist with daily living activities, providing the hands-on support that helps clients remain safely and comfortably at home.', features: ['Bathing & personal hygiene','Dressing & grooming','Meal preparation','Light housekeeping','Errand running & transportation','Medication reminders'] },
-  { id: 'skilled',   label: 'Skilled Nursing',     icon: '🩺', headline: 'Private Duty Skilled Nursing',   desc: 'For clients with complex or high-acuity medical needs, our private duty skilled nurses provide one-on-one, around-the-clock nursing care at home.', features: ['1-on-1 private duty nursing','Ventilator management','Tracheostomy care','Enteral nutrition support','Pediatric & adult care','24/7 availability'] },
-  { id: 'therapy',   label: 'Physical Therapy',    icon: '🏃', headline: 'In-Home Physical Therapy',       desc: 'Our licensed physical therapists design personalized programs to help clients regain strength, mobility, and independence — all without leaving home.', features: ['Mobility & balance training','Post-surgery rehabilitation','Fall prevention programs','Strength & conditioning','Pain management','Home safety assessment'] },
-  { id: 'companion', label: 'Companion Care',      icon: '💛', headline: 'Meaningful Companionship',       desc: 'Social connection is essential to wellbeing. Our companions provide friendship, engagement, and emotional support that makes life at home richer.', features: ['Conversation & social engagement','Reading & cognitive activities','Accompanying to appointments','Hobbies & recreation','Oversight for safety','Family peace of mind'] },
+  {
+    id: 'pediatric',
+    label: 'Pediatric Nursing',
+    icon: '👶',
+    headline: 'Specialized Care for Children',
+    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop',
+    desc: 'Our pediatric nurses provide expert, compassionate care for infants, children, and adolescents with medical needs — in the safety and comfort of home.',
+    features: ['Newborn & infant care', 'Pediatric wound care', 'Medication administration', 'Developmental monitoring', 'Post-surgical recovery', 'Family education & support'],
+  },
+  {
+    id: 'skilled',
+    label: 'Skilled Nursing',
+    icon: '🩺',
+    headline: 'Advanced Clinical Nursing at Home',
+    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&auto=format&fit=crop',
+    desc: 'Our licensed skilled nurses deliver high-quality medical care at home — from complex wound management to chronic disease monitoring and IV therapy.',
+    features: ['Wound care & dressing changes', 'IV therapy & injections', 'Catheter & ostomy care', 'Chronic disease management', 'Medication management', 'Vital signs monitoring'],
+  },
+  {
+    id: 'companion',
+    label: 'Companion Services',
+    icon: '💛',
+    headline: 'Meaningful Companionship & Support',
+    image: 'https://images.unsplash.com/photo-1516307365426-bea591f05011?w=800&auto=format&fit=crop',
+    desc: 'Our compassionate companions provide consistent social engagement, emotional support, and friendly presence — reducing isolation and improving quality of life.',
+    features: ['Friendly conversation & engagement', 'Reading & cognitive activities', 'Hobbies & light recreation', 'Meal preparation & company', 'Errand assistance', 'Family peace of mind'],
+  },
+  {
+    id: 'respite',
+    label: 'Respite Care',
+    icon: '🌿',
+    headline: 'Relief for Family Caregivers',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop',
+    desc: 'Caring for a loved one is deeply rewarding — and exhausting. Our respite care gives family caregivers the rest they deserve while their loved one remains in trusted hands.',
+    features: ['Temporary relief for family caregivers', 'Flexible scheduling — hourly or daily', 'Personal care & hygiene assistance', 'Medication reminders', 'Safety supervision', 'Emotional support for clients'],
+  },
+  {
+    id: 'transport',
+    label: 'Transportation',
+    icon: '🚗',
+    headline: "Getting to Appointments Safely",
+    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop',
+    desc: "Missing doctor's appointments shouldn't happen because of transportation. We provide safe, reliable rides to medical visits, ensuring clients never miss critical care.",
+    features: ["Doctor's appointment transport", 'Physical therapy trips', 'Specialist visits', 'Pharmacy runs', 'Safe door-to-door assistance', 'Punctual & reliable scheduling'],
+  },
 ];
 
 export default function Services() {
-  const [active, setActive] = useState('health');
+  const [active, setActive] = useState('pediatric');
   const current = categories.find(c => c.id === active);
 
   return (
@@ -20,8 +59,8 @@ export default function Services() {
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">What We Provide</p>
-          <h1 className="font-serif text-blush mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>Our Services</h1>
-          <p className="text-blush/80 max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
+          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>Our Services</h1>
+          <p className="text-white max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
             Comprehensive home care built around what each person truly needs — medically, personally, and emotionally.
           </p>
         </AnimatedSection>
@@ -45,12 +84,22 @@ export default function Services() {
       <section className="section-pad bg-blush/10">
         <div className="container-max grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           <AnimatedSection direction="left" key={active}>
-            <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-10 text-blush">
-              <div className="text-5xl mb-6">{current.icon}</div>
-              <h2 className="font-serif text-2xl md:text-3xl mb-4">{current.headline}</h2>
-              <p className="text-blush/85 leading-relaxed">{current.desc}</p>
+            <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl overflow-hidden">
+              {/* Service image */}
+              <img
+                src={current.image}
+                alt={current.headline}
+                className="w-full object-cover"
+                style={{ height: 220 }}
+              />
+              <div className="p-8 text-blush">
+                <div className="text-4xl mb-4">{current.icon}</div>
+                <h2 className="font-serif text-2xl md:text-3xl mb-3">{current.headline}</h2>
+                <p className="text-blush/85 leading-relaxed text-sm">{current.desc}</p>
+              </div>
             </div>
           </AnimatedSection>
+
           <AnimatedSection direction="right" key={active + '-f'}>
             <h3 className="font-serif text-2xl text-primary mb-6">What's Included</h3>
             <div className="flex flex-col gap-3">
@@ -68,7 +117,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* All Services */}
+      {/* All Services Grid */}
       <section className="section-pad bg-white">
         <div className="container-max">
           <AnimatedSection className="text-center mb-12">
@@ -77,11 +126,23 @@ export default function Services() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {categories.map((c, i) => (
               <AnimatedSection key={c.id} delay={i * 0.08} direction="up">
-                <div onClick={() => { setActive(c.id); window.scrollTo({ top: 200, behavior: 'smooth' }); }}
-                  className="group bg-blush/10 rounded-xl p-7 cursor-pointer border border-soft/20 hover:bg-primary transition-all duration-300">
-                  <div className="text-3xl mb-3">{c.icon}</div>
-                  <h3 className="font-serif text-lg text-primary group-hover:text-blush mb-2 transition-colors">{c.label}</h3>
-                  <p className="text-xs text-gray-500 group-hover:text-blush/70 leading-relaxed transition-colors">{c.desc.slice(0, 80)}...</p>
+                <div
+                  onClick={() => { setActive(c.id); window.scrollTo({ top: 200, behavior: 'smooth' }); }}
+                  className="group rounded-xl overflow-hidden cursor-pointer border border-soft/20 hover:shadow-xl transition-all duration-300"
+                >
+                  {/* Card image */}
+                  <div className="overflow-hidden" style={{ height: 160 }}>
+                    <img
+                      src={c.image}
+                      alt={c.label}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="bg-blush/10 group-hover:bg-primary p-6 transition-colors duration-300">
+                    <div className="text-2xl mb-2">{c.icon}</div>
+                    <h3 className="font-serif text-lg text-primary group-hover:text-blush mb-1 transition-colors">{c.label}</h3>
+                    <p className="text-xs text-gray-500 group-hover:text-blush/70 leading-relaxed transition-colors">{c.desc.slice(0, 75)}...</p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}

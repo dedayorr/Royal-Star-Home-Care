@@ -24,8 +24,8 @@ export default function About() {
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">Our Story</p>
-          <h1 className="font-serif text-blush mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>About Royal Star Home Care</h1>
-          <p className="text-blush/80 max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
+          <h1 className="font-serif text-white mb-5" style={{ fontSize: 'clamp(32px,6vw,64px)' }}>About Royal Star Home Care</h1>
+          <p className="text-white max-w-xl mx-auto leading-relaxed" style={{ fontSize: 'clamp(15px,2vw,17px)' }}>
             A family of caregivers committed to making life at home safer, fuller, and more dignified — every single day.
           </p>
         </AnimatedSection>

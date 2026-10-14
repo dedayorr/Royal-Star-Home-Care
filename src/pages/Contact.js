@@ -6,7 +6,7 @@ const inputCls = 'w-full px-4 py-3 rounded-lg border border-soft/40 text-sm text
 const info = [
   { icon: '📍', label: 'Address', value: '1730 Powder Horn Drive\nAlgonquin, IL' },
   { icon: '📞', label: 'Phone',   value: '+1 (224) 454-4186', href: 'tel:+12244544186' },
-  { icon: '✉️', label: 'Email',   value: 'royalstarhomecareservicesinc@gmail.com', href: 'mailto:royalstarhomecareservicesinc@gmail.com' },
+  { icon: '✉️', label: 'Email',   value: 'royalstarhomecareservices@gmail.com', href: 'mailto:royalstarhomecareservicesinc@gmail.com' },
   { icon: '🕐', label: 'Hours',   value: 'Mon – Fri: 8am – 6pm\nOn-call: 24/7 for existing clients' },
 ];
 

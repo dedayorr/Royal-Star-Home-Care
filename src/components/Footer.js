@@ -84,7 +84,7 @@ export default function Footer() {
                   href="mailto:royalstarhomecareservicesinc@gmail.com"
                   className="hover:text-blush transition-colors"
                 >
-                  ✉ royalstarhomecareservicesinc@gmail.com
+                  ✉ royalstarhomecareservices@gmail.com
                 </a>
               </div>
             </div>

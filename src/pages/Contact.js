@@ -4,12 +4,10 @@ import AnimatedSection from "../components/AnimatedSection";
 const inputCls =
   "w-full px-4 py-3 rounded-lg border border-soft/40 text-sm text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
 
+const selectCls = (val) =>
+  `${inputCls} ${!val ? "text-gray-400" : "text-gray-700"}`;
+
 const info = [
-  {
-    icon: "📍",
-    label: "Address",
-    value: "1730 Powder Horn Drive\nAlgonquin, IL",
-  },
   {
     icon: "📞",
     label: "Phone",
@@ -38,9 +36,14 @@ const info = [
 export default function Contact() {
   const [form, setForm] = useState({
     name: "",
-    email: "",
     phone: "",
+    email: "",
+    subject: "",
+    careFor: "",
     service: "",
+    preferredDate: "",
+    preferredTime: "",
+    cityZip: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -59,7 +62,7 @@ export default function Contact() {
           >
             Book An Appointment
           </h1>
-          <p className="text-white max-w-xl mx-auto leading-relaxed text-[20px]">
+          <p className="text-white max-w-xl mx-auto leading-relaxed text-[18px]">
             Request care or a free consultation. Share a few details and our
             team will reach out — no obligation, and help is available 24/7.
           </p>
@@ -68,14 +71,14 @@ export default function Contact() {
 
       <section className="section-pad bg-blush/10">
         <div className="container-max grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+
           {/* Info */}
           <AnimatedSection direction="left" className="lg:col-span-2">
             <h2 className="font-serif text-3xl text-primary mb-3">
               Get in Touch
             </h2>
-            <p className="text-gray-500 leading-relaxed mb-8">
-              Whether you're ready to start or just exploring options, our team
-              is available to help — no pressure, just honest conversation.
+            <p className="leading-relaxed mb-8 text-black text-2xl font-bold">
+              Let's talk about the care you need
             </p>
             <div className="flex flex-col gap-6 mb-10">
               {info.map((item) => (
@@ -84,18 +87,18 @@ export default function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-xs font-semibold tracking-widest uppercase text-secondary mb-1">
+                    <div className="font-bold text-l tracking-widest uppercase text-secondary mb-1">
                       {item.label}
                     </div>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-sm text-gray-600 leading-relaxed hover:text-primary transition-colors break-words whitespace-pre-line"
+                        className="font-semibold text-gray-600 leading-relaxed hover:text-primary transition-colors break-words whitespace-pre-line "
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <div className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+                      <div className="font-semibold text-gray-600 leading-relaxed whitespace-pre-line ">
                         {item.value}
                       </div>
                     )}
@@ -104,18 +107,16 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Testimonial */}
-            <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-7 text-blush">
-              <div className="text-2xl mb-3">⭐</div>
-              <p className="text-sm leading-relaxed text-blush/85 italic">
-                "Royal Star gave us peace of mind we didn't think was possible.
-                Their team treated our mother with the dignity and love she
-                deserved."
+            {/* Reassurance card */}
+            {/* <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-7 text-blush">
+              <div className="text-3xl mb-3">💜</div>
+              <h4 className="font-serif text-lg mb-2">We're Here for You</h4>
+              <p className="text-sm leading-relaxed text-blush/85">
+                Whether you're just exploring options or ready to start, our
+                care coordinators are available to guide you every step of the
+                way — with no pressure and no obligation.
               </p>
-              <p className="text-xs text-soft font-semibold mt-4">
-                — Family Client, Algonquin IL
-              </p>
-            </div>
+            </div> */}
           </AnimatedSection>
 
           {/* Form */}
@@ -123,87 +124,207 @@ export default function Contact() {
             {submitted ? (
               <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-16 text-center text-blush">
                 <div className="text-6xl mb-5">💛</div>
-                <h3 className="font-serif text-3xl mb-3">Message Sent!</h3>
-                <p className="text-blush/80 leading-relaxed">
-                  Thank you for reaching out. A member of our team will contact
-                  you within 24 hours.
+                <h3 className="font-serif text-3xl mb-3">Request Received!</h3>
+                <p className="text-blush/80 leading-relaxed mb-6">
+                  Thank you for reaching out to Royal Star Home Care. A member
+                  of our team will contact you within 24 hours to confirm your
+                  appointment.
                 </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-blush transition-colors"
+                >
+                  Submit Another Request
+                </button>
               </div>
             ) : (
               <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
-                className="bg-white rounded-2xl p-8 md:p-12 shadow-xl shadow-soft/10"
+                onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-soft/10"
               >
-                <h3 className="font-serif text-2xl text-primary mb-7">
-                  Send Us a Message
+                <h3 className="font-serif text-2xl text-primary mb-2">
+                  Request an Appointment
                 </h3>
+                <p className="text-gray-400 text-sm mb-7">
+                  Fields marked <span className="text-secondary">*</span> are required
+                </p>
+
+                {/* Row 1 — Name & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Full Name <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      name="name"
+                      placeholder="e.g. John Smith"
+                      required
+                      value={form.name}
+                      onChange={onChange}
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Phone Number <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      name="phone"
+                      placeholder="e.g. (224) 000-0000"
+                      type="tel"
+                      required
+                      value={form.phone}
+                      onChange={onChange}
+                      className={inputCls}
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2 — Email & Subject */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Email Address <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      name="email"
+                      placeholder="you@example.com"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={onChange}
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Subject <span className="text-secondary">*</span>
+                    </label>
+                    <input
+                      name="subject"
+                      placeholder="e.g. Inquiry about nursing care"
+                      required
+                      value={form.subject}
+                      onChange={onChange}
+                      className={inputCls}
+                    />
+                  </div>
+                </div>
+
+                {/* Row 3 — Care For & Service */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Care is for <span className="text-secondary">*</span>
+                    </label>
+                    <select
+                      name="careFor"
+                      required
+                      value={form.careFor}
+                      onChange={onChange}
+                      className={selectCls(form.careFor)}
+                    >
+                      <option value="">Select one...</option>
+                      <option>Myself</option>
+                      <option>A Loved One</option>
+                      <option>A Patient / Client</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Service Interested In <span className="text-secondary">*</span>
+                    </label>
+                    <select
+                      name="service"
+                      required
+                      value={form.service}
+                      onChange={onChange}
+                      className={selectCls(form.service)}
+                    >
+                      <option value="">Select a service...</option>
+                      <option>Pediatric Nursing</option>
+                      <option>Skilled Nursing</option>
+                      <option>Companion Services</option>
+                      <option>Respite Care</option>
+                      <option>Transportation to Doctor's Appointment</option>
+                      <option>Not Sure Yet</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Row 4 — Preferred Date & Time */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Preferred Date
+                    </label>
+                    <input
+                      name="preferredDate"
+                      type="date"
+                      value={form.preferredDate}
+                      onChange={onChange}
+                      min={new Date().toISOString().split("T")[0]}
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                      Preferred Time
+                    </label>
+                    <select
+                      name="preferredTime"
+                      value={form.preferredTime}
+                      onChange={onChange}
+                      className={selectCls(form.preferredTime)}
+                    >
+                      <option value="">Select a time...</option>
+                      <option>Morning (8am – 12pm)</option>
+                      <option>Afternoon (12pm – 4pm)</option>
+                      <option>Evening (4pm – 6pm)</option>
+                      <option>Any Time</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Row 5 — City/Zip */}
+                <div className="mb-4">
+                  <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    City / ZIP Code <span className="text-secondary">*</span>
+                  </label>
                   <input
-                    name="name"
-                    placeholder="Full Name *"
+                    name="cityZip"
+                    placeholder="e.g. Algonquin, IL 60102"
                     required
-                    value={form.name}
-                    onChange={onChange}
-                    className={inputCls}
-                  />
-                  <input
-                    name="email"
-                    placeholder="Email Address *"
-                    type="email"
-                    required
-                    value={form.email}
+                    value={form.cityZip}
                     onChange={onChange}
                     className={inputCls}
                   />
                 </div>
-                <input
-                  name="phone"
-                  placeholder="Phone Number"
-                  type="tel"
-                  value={form.phone}
-                  onChange={onChange}
-                  className={`${inputCls} mb-4`}
-                />
-                <select
-                  name="service"
-                  value={form.service}
-                  onChange={onChange}
-                  className={`${inputCls} mb-4 ${
-                    !form.service ? "text-gray-400" : ""
-                  }`}
-                >
-                  <option value="">Service of Interest (optional)</option>
-                  {[
-                  "Pediatric Nursing",
-                  "Skilled Nursing",
-                  "Companion Services",
-                  "Respite Care",
-                  "Transportation to Doctor's Appointment",
-                    "Not Sure Yet",
-                  ].map((s) => (
-                    <option key={s}>{s}</option>
-                  ))}
-                </select>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your situation or any questions you have... *"
-                  required
-                  rows={5}
-                  value={form.message}
-                  onChange={onChange}
-                  className={`${inputCls} resize-y mb-6`}
-                />
+
+                {/* Row 6 — Message */}
+                <div className="mb-6">
+                  <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    Anything else? Tell us about the care you need
+                  </label>
+                  <textarea
+                    name="message"
+                    placeholder="Share any details about the care needed, medical conditions, schedule preferences, or questions you have..."
+                    rows={5}
+                    value={form.message}
+                    onChange={onChange}
+                    className={`${inputCls} resize-y`}
+                  />
+                </div>
+
                 <button
                   type="submit"
                   className="btn-primary w-full py-4 text-base"
                 >
-                  Send Message →
+                  Request Appointment →
                 </button>
-                <p className="text-xs text-gray-400 text-center mt-4">
-                  We respond within 24 hours, Monday through Friday.
+                <p className=" text-gray-400 text-center mt-4">
+                  We respond within 24 hours, Monday through Friday. For urgent
+                  care needs, please call us directly.
                 </p>
               </form>
             )}

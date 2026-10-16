@@ -11,6 +11,8 @@ const stats = [
   { value: "100%", label: "Satisfaction Goal" },
 ];
 
+const serviceAreas = ["Barrington", "McHenry", "Lake County", "Kane County"];
+
 const services = [
   {
     icon: "👶",
@@ -225,6 +227,32 @@ export default function Home() {
               <button className="btn-primary">See All Services →</button>
             </NavLink>
           </AnimatedSection>
+        </div>
+      </section>
+
+      {/* SERVICE AREAS */}
+      <section className="section-pad bg-white">
+        <div className="container-max">
+          <AnimatedSection className="text-center mb-12">
+            <p className="label">Where We Serve</p>
+            <h2 className="font-serif text-3xl font-bold md:text-4xl text-primary mb-4">
+              Proudly Serving Communities Near You
+            </h2>
+            <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto">
+              Royal Star Home Care provides compassionate in-home care to
+              families across these areas — so quality care is close to home.
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {serviceAreas.map((area, i) => (
+              <AnimatedSection key={area} delay={i * 0.08} direction="up">
+                <div className="flex items-center justify-center text-center rounded-full border border-primary/10 bg-blush/20 px-6 py-5 text-lg font-semibold text-primary md:text-xl">
+                  {area}
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 

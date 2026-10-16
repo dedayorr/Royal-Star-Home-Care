@@ -17,6 +17,12 @@ const info = [
     href: "tel:+12244544186",
   },
   {
+    icon: "📞",
+    label: "Fax",
+    value: "+1 (312) 795-4540",
+    href: "tel:+13127954540",
+  },
+  {
     icon: "✉️",
     label: "Email",
     value: "royalstarhomecareservices@gmail.com",
@@ -171,14 +177,11 @@ export default function Contact() {
                 >
                   <option value="">Service of Interest (optional)</option>
                   {[
-                    "Home Health",
-                    "Home Nursing",
-                    "Caregiver Services",
-                    "Skilled Nursing",
-                    "Private Duty Nursing",
-                    "Personal Care",
-                    "Companion Care",
-                    "Physical Therapy",
+                  "Pediatric Nursing",
+                  "Skilled Nursing",
+                  "Companion Services",
+                  "Respite Care",
+                  "Transportation to Doctor's Appointment",
                     "Not Sure Yet",
                   ].map((s) => (
                     <option key={s}>{s}</option>

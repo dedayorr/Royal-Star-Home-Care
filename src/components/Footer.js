@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div>
                 <a
-                  href="tel:+12244544186"
+                  href="tel:+13127954540"
                   className="hover:text-blush transition-colors"
                 >
                   📞 +1 (224) 454-4186 FAX : +1 (312) 795-4540

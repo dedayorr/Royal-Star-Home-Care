@@ -120,7 +120,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <NavLink to="/contact">
-              <button className="btn-primary">Get Started Today</button>
+              <button className="btn-primary">Book an Appointment</button>
             </NavLink>
             <NavLink to="/services">
               <button className="btn-outline-white">View Our Services</button>

@@ -24,7 +24,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif mb-4 text-white font-bold text-2xl">Quick Links</h4>
+            <h4 className="font-serif mb-4 text-white font-bold text-2xl">
+              Quick Links
+            </h4>
             {[
               ["/", "Home"],
               ["/about", "About Us"],
@@ -53,8 +55,7 @@ export default function Footer() {
               "Skilled Nursing",
               "Companion Services",
               "Respite Care",
-              "Transportation to Doctor's Appointment"
-          
+              "Transportation to Doctor's Appointment",
             ].map((s) => (
               <div key={s} className="text-xl text-white mb-2">
                 {s}
@@ -64,7 +65,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif mb-4 text-white font-bold text-2xl">Contact Us</h4>
+            <h4 className="font-serif mb-4 text-white font-bold text-2xl">
+              Contact Us
+            </h4>
             <div className="text-xl text-white space-y-2 leading-relaxed">
               <div>
                 📍 1730 Powder Horn Drive
@@ -76,7 +79,7 @@ export default function Footer() {
                   href="tel:+12244544186"
                   className="hover:text-blush transition-colors"
                 >
-                  📞 +1 (224) 454-4186
+                  📞 +1 (224) 454-4186 FAX : +1 (312) 795-4540
                 </a>
               </div>
               <div className="break-words font-bold">

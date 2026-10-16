@@ -242,7 +242,7 @@ export default function Services() {
             right services — no pressure.
           </p>
           <NavLink to="/contact">
-            <button className="btn-primary">Talk to a Care Coordinator</button>
+            <button className="btn-primary">Book an appointment</button>
           </NavLink>
         </AnimatedSection>
       </section>

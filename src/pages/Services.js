@@ -12,12 +12,9 @@ const categories = [
       "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&auto=format&fit=crop",
     desc: "Our pediatric nurses provide expert, compassionate care for infants, children, and adolescents with medical needs — in the safety and comfort of home.",
     features: [
-      "Newborn & infant care",
-      "Pediatric wound care",
       "Medication administration",
       "Developmental monitoring",
-      "Post-surgical recovery",
-      "Family education & support",
+      "Family support",
     ],
   },
   {
@@ -29,10 +26,7 @@ const categories = [
       "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&auto=format&fit=crop",
     desc: "Our licensed skilled nurses deliver high-quality medical care at home — from complex wound management to chronic disease monitoring and IV therapy.",
     features: [
-      "Wound care & dressing changes",
-      "IV therapy & injections",
       "Catheter & ostomy care",
-      "Chronic disease management",
       "Medication management",
       "Vital signs monitoring",
     ],
@@ -47,10 +41,7 @@ const categories = [
     desc: "Our compassionate companions provide consistent social engagement, emotional support, and friendly presence — reducing isolation and improving quality of life.",
     features: [
       "Friendly conversation & engagement",
-      "Reading & cognitive activities",
-      "Hobbies & light recreation",
       "Meal preparation & company",
-      "Errand assistance",
       "Family peace of mind",
     ],
   },
@@ -67,7 +58,6 @@ const categories = [
       "Flexible scheduling — hourly or daily",
       "Personal care & hygiene assistance",
       "Medication reminders",
-      "Safety supervision",
       "Emotional support for clients",
     ],
   },
@@ -81,7 +71,6 @@ const categories = [
     desc: "Missing doctor's appointments shouldn't happen because of transportation. We provide safe, reliable rides to medical visits, ensuring clients never miss critical care.",
     features: [
       "Doctor's appointment transport",
-      "Physical therapy trips",
       "Specialist visits",
       "Pharmacy runs",
       "Safe door-to-door assistance",

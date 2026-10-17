@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 
 const inputCls =
-  "w-full px-4 py-5 rounded-lg border border-soft/40 text- text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
+  "w-full px-4 py-4 rounded-lg border border-soft/40 text- text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
 
 const selectCls = (val) =>
   `${inputCls} ${!val ? "text-gray-400" : "text-gray-700"}`;

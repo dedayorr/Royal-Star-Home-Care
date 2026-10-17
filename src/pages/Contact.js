@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 
 const inputCls =
-  "w-full px-4 py-5 rounded-lg border border-soft/40 text-sm text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
+  "w-full px-4 py-5 rounded-lg border border-soft/40 text- text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
 
 const selectCls = (val) =>
   `${inputCls} ${!val ? "text-gray-400" : "text-gray-700"}`;
@@ -333,7 +333,7 @@ export default function Contact() {
       </section>
 
       {/* Map */}
-      <section className="bg-primary py-16 px-6 text-center">
+      {/* <section className="bg-primary py-16 px-6 text-center">
         <AnimatedSection>
           <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">
             Find Us
@@ -358,7 +358,7 @@ export default function Contact() {
             </button>
           </a>
         </AnimatedSection>
-      </section>
+      </section> */}
     </main>
   );
 }

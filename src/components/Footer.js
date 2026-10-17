@@ -69,11 +69,7 @@ export default function Footer() {
               Contact Us
             </h4>
             <div className="text-xl text-white space-y-2 leading-relaxed">
-              <div>
-                📍 1730 Powder Horn Drive
-                <br />
-                Algonquin, IL
-              </div>
+        
               <div>
                 <a
                   href="tel:+13127954540"

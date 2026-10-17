@@ -320,7 +320,7 @@ export default function Contact() {
                   type="submit"
                   className="btn-primary w-full py-4 text-base"
                 >
-                  Request Appointment →
+                  Submit
                 </button>
                 <p className=" text-gray-400 text-center mt-4">
                   We respond within 24 hours, Monday through Friday. For urgent

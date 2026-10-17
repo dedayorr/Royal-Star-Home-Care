@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 
 const inputCls =
-  "w-full px-4 py-3 rounded-lg border border-soft/40 text-sm text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
+  "w-full px-4 py-5 rounded-lg border border-soft/40 text-sm text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
 
 const selectCls = (val) =>
   `${inputCls} ${!val ? "text-gray-400" : "text-gray-700"}`;
@@ -53,7 +53,7 @@ export default function Contact() {
     <main className="pt-[72px]">
       <section className="bg-gradient-to-br from-primary to-secondary py-20 px-6 text-center">
         <AnimatedSection>
-          <p className="text-xs font-semibold tracking-widest uppercase text-soft mb-3">
+          <p className="text-xs font-semibold tracking-widest text-soft mb-3">
             Reach Out
           </p>
           <h1
@@ -87,7 +87,7 @@ export default function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="font-bold text-l tracking-widest uppercase text-secondary mb-1">
+                    <div className="font-bold text-l tracking-widest text-secondary mb-1">
                       {item.label}
                     </div>
                     {item.href ? (
@@ -152,7 +152,7 @@ export default function Contact() {
                 {/* Row 1 — Name & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Full Name <span className="text-secondary">*</span>
                     </label>
                     <input
@@ -165,7 +165,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Phone Number <span className="text-secondary">*</span>
                     </label>
                     <input
@@ -183,7 +183,7 @@ export default function Contact() {
                 {/* Row 2 — Email & Subject */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Email Address <span className="text-secondary">*</span>
                     </label>
                     <input
@@ -197,7 +197,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Subject <span className="text-secondary">*</span>
                     </label>
                     <input
@@ -214,7 +214,7 @@ export default function Contact() {
                 {/* Row 3 — Care For & Service */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Care is for <span className="text-secondary">*</span>
                     </label>
                     <select
@@ -231,7 +231,7 @@ export default function Contact() {
                     </select>
                   </div>
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Service Interested In <span className="text-secondary">*</span>
                     </label>
                     <select
@@ -255,7 +255,7 @@ export default function Contact() {
                 {/* Row 4 — Preferred Date & Time */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Preferred Date
                     </label>
                     <input
@@ -268,7 +268,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                    <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                       Preferred Time
                     </label>
                     <select
@@ -288,12 +288,12 @@ export default function Contact() {
 
                 {/* Row 5 — City/Zip */}
                 <div className="mb-4">
-                  <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                  <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     City / ZIP Code <span className="text-secondary">*</span>
                   </label>
                   <input
                     name="cityZip"
-                    placeholder="e.g. Algonquin, IL 60102"
+                    placeholder=""
                     required
                     value={form.cityZip}
                     onChange={onChange}
@@ -303,7 +303,7 @@ export default function Contact() {
 
                 {/* Row 6 — Message */}
                 <div className="mb-6">
-                  <label className=" font-semibold text-gray-500 uppercase tracking-wide mb-1 block">
+                  <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
                     Anything else? Tell us about the care you need
                   </label>
                   <textarea

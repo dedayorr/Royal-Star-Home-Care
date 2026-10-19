@@ -11,7 +11,14 @@ const stats = [
   { value: "100%", label: "Satisfaction Goal" },
 ];
 
-const serviceAreas = ["Barrington", "McHenry", "Lake County", "Kane County"];
+const serviceAreas = [
+  "Huntley, Barrington",
+  "Algonquin",
+  "Elgin",
+  "Schaumburg",
+  "Saint Charles",
+  "Bartlett",
+];
 
 const services = [
   {

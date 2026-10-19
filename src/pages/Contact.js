@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = "service_fc52n45";
+const EMAILJS_SERVICE_ID = "service_oo8pexq";
 const EMAILJS_TEMPLATE_ID = "template_5ot0m66";
 const EMAILJS_PUBLIC_KEY = "prU2mq4C_eMpPOd3_";
 

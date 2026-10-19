@@ -19,10 +19,9 @@ const serviceAreas = [
   "Schaumburg",
   "Saint Charles",
   "Bartlett",
-  "McHenry",
-  "Lake county",
-  "Kane",
-];
+  "McHenry county",
+  "Kane county",
+  ];
 
 const services = [
   {

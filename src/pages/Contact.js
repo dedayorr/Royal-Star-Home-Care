@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID  = 'service_xxxxxxx';
+const EMAILJS_TEMPLATE_ID = 'template_5ot0m66';
+const EMAILJS_PUBLIC_KEY  = 'your_public_key';
 
 const inputCls =
   "w-full px-4 py-4 rounded-lg border border-soft/40 text- text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";

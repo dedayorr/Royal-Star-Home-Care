@@ -12,7 +12,8 @@ const stats = [
 ];
 
 const serviceAreas = [
-  "Huntley, Barrington",
+  "Huntley",
+  "Barrington",
   "Algonquin",
   "Elgin",
   "Schaumburg",

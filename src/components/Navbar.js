@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text- text-3xl p-2"
+          className="md:hidden text- text-3xl p-2 text-white"
         >
           {open ? "✕" : "☰"}
         </button>

@@ -364,11 +364,23 @@ export default function Contact() {
                   />
                 </div>
 
+                {status === "error" && (
+                  <div className="mb-4 px-4 py-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+                    Something went wrong. Please try again or call us at +1
+                    (224) 454-4186.
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="btn-primary w-full py-4 text-base"
+                  disabled={status === "sending"}
+                  className={`btn-primary w-full py-4 text-base ${
+                    status === "sending" ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Submit
+                  {status === "sending"
+                    ? "Sending..."
+                    : "Request Appointment →"}
                 </button>
                 <p className=" text-gray-400 text-center mt-4">
                   We respond within 24 hours, Monday through Friday. For urgent

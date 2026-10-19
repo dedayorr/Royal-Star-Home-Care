@@ -19,6 +19,9 @@ const serviceAreas = [
   "Schaumburg",
   "Saint Charles",
   "Bartlett",
+  "McHenry",
+  "Lake county",
+  "Kane",
 ];
 
 const services = [

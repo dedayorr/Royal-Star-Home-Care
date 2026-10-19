@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AnimatedSection from "../components/AnimatedSection";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID  = 'service_xxxxxxx';
-const EMAILJS_TEMPLATE_ID = 'template_5ot0m66';
-const EMAILJS_PUBLIC_KEY  = 'your_public_key';
+const EMAILJS_SERVICE_ID = "service_fc52n45";
+const EMAILJS_TEMPLATE_ID = "template_5ot0m66";
+const EMAILJS_PUBLIC_KEY = "prU2mq4C_eMpPOd3_";
 
 const inputCls =
   "w-full px-4 py-4 rounded-lg border border-soft/40 text- text-gray-700 outline-none focus:border-secondary transition-colors bg-white font-sans";
@@ -52,7 +52,49 @@ export default function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle");
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          phone: form.phone,
+          from_email: form.email,
+          subject: form.subject,
+          care_for: form.careFor,
+          service: form.service || "Not specified",
+          preferred_date: form.preferredDate || "Not specified",
+          preferred_time: form.preferredTime || "Not specified",
+          city_zip: form.cityZip,
+          message: form.message || "No additional info",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setSubmitted(true);
+      setForm({
+        name: "",
+        phone: "",
+        email: "",
+        subject: "",
+        careFor: "",
+        service: "",
+        preferredDate: "",
+        preferredTime: "",
+        cityZip: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+    }
+  };
 
   return (
     <main className="pt-[72px]">
@@ -76,7 +118,6 @@ export default function Contact() {
 
       <section className="section-pad bg-blush/10">
         <div className="container-max grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-
           {/* Info */}
           <AnimatedSection direction="left" className="lg:col-span-2">
             <h2 className="font-serif text-3xl text-primary mb-3">
@@ -144,14 +185,15 @@ export default function Contact() {
               </div>
             ) : (
               <form
-                onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+                onSubmit={handleSubmit}
                 className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-soft/10"
               >
                 <h3 className="font-serif text-2xl text-primary mb-2">
                   Request an Appointment
                 </h3>
                 <p className="text-gray-400 text-sm mb-7">
-                  Fields marked <span className="text-secondary">*</span> are required
+                  Fields marked <span className="text-secondary">*</span> are
+                  required
                 </p>
 
                 {/* Row 1 — Name & Phone */}
@@ -237,7 +279,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className=" font-semibold text-gray-500 tracking-wide mb-1 block">
-                      Service Interested In <span className="text-secondary">*</span>
+                      Service Interested In{" "}
+                      <span className="text-secondary">*</span>
                     </label>
                     <select
                       name="service"

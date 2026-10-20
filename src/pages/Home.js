@@ -21,7 +21,7 @@ const serviceAreas = [
   "Bartlett",
   "McHenry county",
   "Kane county",
-  ];
+];
 
 const services = [
   {
@@ -40,14 +40,19 @@ const services = [
     desc: "Friendly companionship and personalized support to promote emotional wellbeing, social engagement, and a better quality of life.",
   },
   {
-    icon: "🤝",
-    title: "Respite Care",
-    desc: "Temporary care and support for loved ones, giving family caregivers time to rest while ensuring their loved ones receive attentive care.",
-  },
-  {
     icon: "🚗",
     title: "Transportation to Doctor's Appointment",
     desc: "Reliable transportation assistance to help clients attend medical appointments safely and on time.",
+  },
+  {
+    icon: "🤱",
+    title: "Postnatal Care",
+    desc: "Dedicated care and support for new mothers and newborns during the critical postpartum period — at home, where comfort matters most.",
+  },
+  {
+    icon: "🏥",
+    title: "Staffing Nurse",
+    desc: "Qualified and experienced nurses available for placement in healthcare facilities, homes, and institutions to meet staffing needs.",
   },
 ];
 

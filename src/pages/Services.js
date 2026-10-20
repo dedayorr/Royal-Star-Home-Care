@@ -46,22 +46,6 @@ const categories = [
     ],
   },
   {
-    id: "respite",
-    label: "Respite Care",
-    icon: "🌿",
-    headline: "Relief for Family Caregivers",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop",
-    desc: "Caring for a loved one is deeply rewarding — and exhausting. Our respite care gives family caregivers the rest they deserve while their loved one remains in trusted hands.",
-    features: [
-      "Temporary relief for family caregivers",
-      "Flexible scheduling — hourly or daily",
-      "Personal care & hygiene assistance",
-      "Medication reminders",
-      "Emotional support for clients",
-    ],
-  },
-  {
     id: "transport",
     label: "Transportation",
     icon: "🚗",
@@ -75,6 +59,40 @@ const categories = [
       "Pharmacy runs",
       "Safe door-to-door assistance",
       "Punctual & reliable scheduling",
+    ],
+  },
+  {
+    id: "postnatal",
+    label: "Postnatal Care",
+    icon: "🤱",
+    headline: "Support for New Mothers & Newborns",
+    image:
+      "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&auto=format&fit=crop",
+    desc: "Our postnatal care team provides dedicated support to new mothers and newborns during the critical postpartum period — helping families transition smoothly and confidently.",
+    features: [
+      "Newborn care & monitoring",
+      "Breastfeeding support & guidance",
+      "Postpartum recovery assistance",
+      "Maternal health monitoring",
+      "Infant bathing & hygiene",
+      "Emotional support for new mothers",
+    ],
+  },
+  {
+    id: "staffing",
+    label: "Staffing Nurse",
+    icon: "🏥",
+    headline: "Professional Nurse Staffing Solutions",
+    image:
+      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&auto=format&fit=crop",
+    desc: "We provide qualified, experienced nurses for placement in healthcare facilities, private homes, and institutions — flexible staffing solutions tailored to your needs.",
+    features: [
+      "Temporary & permanent placements",
+      "Skilled RN & LPN staffing",
+      "Home & facility-based staffing",
+      "Short notice availability",
+      "Background-checked professionals",
+      "Flexible shift scheduling",
     ],
   },
 ];

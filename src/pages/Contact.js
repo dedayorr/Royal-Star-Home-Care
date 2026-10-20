@@ -101,33 +101,64 @@ export default function Contact() {
 
   return (
     <main className="pt-[72px]">
-
       {/* ── Animated Popup Overlay ── */}
       {showPopup && submittedData && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center px-4"
-          style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(8px)" }}
-          onClick={(e) => { if (e.target === e.currentTarget) setShowPopup(false); }}
+          style={{
+            background: "rgba(0,0,0,0.65)",
+            backdropFilter: "blur(8px)",
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowPopup(false);
+          }}
         >
           <div
             className="bg-white rounded-3xl p-10 max-w-md w-full text-center relative overflow-hidden shadow-2xl"
-            style={{ animation: "popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) forwards" }}
+            style={{
+              animation:
+                "popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) forwards",
+            }}
           >
             {/* Background blobs */}
-            <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle, #8E1EA2, transparent)" }} />
-            <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full opacity-10"
-              style={{ background: "radial-gradient(circle, #C654C3, transparent)" }} />
+            <div
+              className="absolute -top-12 -right-12 w-48 h-48 rounded-full opacity-10"
+              style={{
+                background: "radial-gradient(circle, #8E1EA2, transparent)",
+              }}
+            />
+            <div
+              className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full opacity-10"
+              style={{
+                background: "radial-gradient(circle, #C654C3, transparent)",
+              }}
+            />
 
             {/* Floating emojis */}
-            <div className="absolute top-5 left-7 text-2xl select-none"
-              style={{ animation: "floatUp 2.5s ease-in-out 0.4s infinite" }}>💜</div>
-            <div className="absolute top-8 right-8 text-xl select-none"
-              style={{ animation: "floatUp 2.5s ease-in-out 0.7s infinite" }}>✨</div>
-            <div className="absolute bottom-20 left-5 text-lg select-none"
-              style={{ animation: "floatUp 2.5s ease-in-out 1s infinite" }}>⭐</div>
-            <div className="absolute bottom-24 right-6 text-xl select-none"
-              style={{ animation: "floatUp 2.5s ease-in-out 0.5s infinite" }}>🌸</div>
+            <div
+              className="absolute top-5 left-7 text-2xl select-none"
+              style={{ animation: "floatUp 2.5s ease-in-out 0.4s infinite" }}
+            >
+              💜
+            </div>
+            <div
+              className="absolute top-8 right-8 text-xl select-none"
+              style={{ animation: "floatUp 2.5s ease-in-out 0.7s infinite" }}
+            >
+              ✨
+            </div>
+            <div
+              className="absolute bottom-20 left-5 text-lg select-none"
+              style={{ animation: "floatUp 2.5s ease-in-out 1s infinite" }}
+            >
+              ⭐
+            </div>
+            <div
+              className="absolute bottom-24 right-6 text-xl select-none"
+              style={{ animation: "floatUp 2.5s ease-in-out 0.5s infinite" }}
+            >
+              🌸
+            </div>
 
             {/* Checkmark circle */}
             <div className="relative mx-auto mb-6 w-24 h-24">
@@ -137,16 +168,30 @@ export default function Contact() {
               >
                 <svg
                   className="w-12 h-12 text-white"
-                  fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" strokeWidth={2.5}
-                  style={{ animation: "checkPop 0.5s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both" }}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  style={{
+                    animation:
+                      "checkPop 0.5s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both",
+                  }}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               </div>
               {/* Ripple ring */}
-              <div className="absolute inset-0 rounded-full border-4 border-secondary"
-                style={{ animation: "ringRipple 1.6s ease-out 0.2s infinite", opacity: 0 }} />
+              <div
+                className="absolute inset-0 rounded-full border-4 border-secondary"
+                style={{
+                  animation: "ringRipple 1.6s ease-out 0.2s infinite",
+                  opacity: 0,
+                }}
+              />
             </div>
 
             <h3 className="font-serif text-3xl text-primary mb-2 font-bold">
@@ -157,44 +202,64 @@ export default function Contact() {
             </p>
             <p className="text-gray-500 text-sm leading-relaxed mb-7">
               We've received your request for{" "}
-              <span className="text-primary font-semibold">{submittedData.service}</span>.
-              Our care team will reach out within{" "}
-              <span className="text-primary font-semibold">24 hours</span> to confirm.
+              <span className="text-primary font-semibold">
+                {submittedData.service}
+              </span>
+              . Our care team will reach out within{" "}
+              <span className="text-primary font-semibold">24 hours</span> to
+              confirm.
             </p>
 
             {/* Summary card */}
             <div className="bg-gradient-to-br from-blush/30 to-soft/10 rounded-2xl p-4 mb-7 text-left space-y-2 border border-soft/30">
               {submittedData.preferredDate && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400 font-medium">Preferred Date</span>
-                  <span className="text-primary font-semibold">{submittedData.preferredDate}</span>
+                  <span className="text-gray-400 font-medium">
+                    Preferred Date
+                  </span>
+                  <span className="text-primary font-semibold">
+                    {submittedData.preferredDate}
+                  </span>
                 </div>
               )}
               {submittedData.preferredTime && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-400 font-medium">Preferred Time</span>
-                  <span className="text-primary font-semibold">{submittedData.preferredTime}</span>
+                  <span className="text-gray-400 font-medium">
+                    Preferred Time
+                  </span>
+                  <span className="text-primary font-semibold">
+                    {submittedData.preferredTime}
+                  </span>
                 </div>
               )}
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400 font-medium">Location</span>
-                <span className="text-primary font-semibold">{submittedData.cityZip}</span>
+                <span className="text-primary font-semibold">
+                  {submittedData.cityZip}
+                </span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-400 font-medium">Care For</span>
-                <span className="text-primary font-semibold">{submittedData.careFor}</span>
+                <span className="text-primary font-semibold">
+                  {submittedData.careFor}
+                </span>
               </div>
             </div>
 
             <button
-              onClick={() => { setShowPopup(false); setStatus("idle"); }}
+              onClick={() => {
+                setShowPopup(false);
+                setStatus("idle");
+              }}
               className="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold text-base hover:opacity-90 transition-opacity mb-3"
             >
               Done ✓
             </button>
             <p className="text-xs text-gray-400">
               Confirmation sent to{" "}
-              <span className="text-secondary font-medium">{submittedData.email}</span>
+              <span className="text-secondary font-medium">
+                {submittedData.email}
+              </span>
             </p>
           </div>
 
@@ -245,7 +310,6 @@ export default function Contact() {
       {/* ── Main Section ── */}
       <section className="section-pad bg-blush/10">
         <div className="container-max grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-
           {/* Info */}
           <AnimatedSection direction="left" className="lg:col-span-2">
             <h2 className="font-serif text-3xl text-primary mb-3">
@@ -292,7 +356,8 @@ export default function Contact() {
                 Request an Appointment
               </h3>
               <p className="text-gray-400 text-sm mb-7">
-                Fields marked <span className="text-secondary">*</span> are required
+                Fields marked <span className="text-secondary">*</span> are
+                required
               </p>
 
               {/* Row 1 — Name & Phone */}
@@ -301,15 +366,28 @@ export default function Contact() {
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Full Name <span className="text-secondary">*</span>
                   </label>
-                  <input name="name" placeholder="e.g. John Smith" required
-                    value={form.name} onChange={onChange} className={inputCls} />
+                  <input
+                    name="name"
+                    placeholder="e.g. John Smith"
+                    required
+                    value={form.name}
+                    onChange={onChange}
+                    className={inputCls}
+                  />
                 </div>
                 <div>
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Phone Number <span className="text-secondary">*</span>
                   </label>
-                  <input name="phone" placeholder="e.g. (224) 000-0000" type="tel" required
-                    value={form.phone} onChange={onChange} className={inputCls} />
+                  <input
+                    name="phone"
+                    placeholder="e.g. (224) 000-0000"
+                    type="tel"
+                    required
+                    value={form.phone}
+                    onChange={onChange}
+                    className={inputCls}
+                  />
                 </div>
               </div>
 
@@ -319,15 +397,28 @@ export default function Contact() {
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Email Address <span className="text-secondary">*</span>
                   </label>
-                  <input name="email" placeholder="you@example.com" type="email" required
-                    value={form.email} onChange={onChange} className={inputCls} />
+                  <input
+                    name="email"
+                    placeholder="you@example.com"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={onChange}
+                    className={inputCls}
+                  />
                 </div>
                 <div>
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Subject <span className="text-secondary">*</span>
                   </label>
-                  <input name="subject" placeholder="e.g. Inquiry about nursing care" required
-                    value={form.subject} onChange={onChange} className={inputCls} />
+                  <input
+                    name="subject"
+                    placeholder="e.g. Inquiry about nursing care"
+                    required
+                    value={form.subject}
+                    onChange={onChange}
+                    className={inputCls}
+                  />
                 </div>
               </div>
 
@@ -337,8 +428,13 @@ export default function Contact() {
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Care is for <span className="text-secondary">*</span>
                   </label>
-                  <select name="careFor" required value={form.careFor}
-                    onChange={onChange} className={selectCls(form.careFor)}>
+                  <select
+                    name="careFor"
+                    required
+                    value={form.careFor}
+                    onChange={onChange}
+                    className={selectCls(form.careFor)}
+                  >
                     <option value="">Select one...</option>
                     <option>Myself</option>
                     <option>A Loved One</option>
@@ -347,16 +443,23 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
-                    Service Interested In <span className="text-secondary">*</span>
+                    Service Interested In{" "}
+                    <span className="text-secondary">*</span>
                   </label>
-                  <select name="service" required value={form.service}
-                    onChange={onChange} className={selectCls(form.service)}>
+                  <select
+                    name="service"
+                    required
+                    value={form.service}
+                    onChange={onChange}
+                    className={selectCls(form.service)}
+                  >
                     <option value="">Select a service...</option>
                     <option>Pediatric Nursing</option>
                     <option>Skilled Nursing</option>
                     <option>Companion Services</option>
-                    <option>Respite Care</option>
                     <option>Transportation to Doctor's Appointment</option>
+                    <option>Postnatal Care</option>
+                    <option>Staffing Nurse</option>
                     <option>Not Sure Yet</option>
                   </select>
                 </div>
@@ -368,16 +471,25 @@ export default function Contact() {
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Preferred Date
                   </label>
-                  <input name="preferredDate" type="date" value={form.preferredDate}
-                    onChange={onChange} min={new Date().toISOString().split("T")[0]}
-                    className={inputCls} />
+                  <input
+                    name="preferredDate"
+                    type="date"
+                    value={form.preferredDate}
+                    onChange={onChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    className={inputCls}
+                  />
                 </div>
                 <div>
                   <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                     Preferred Time
                   </label>
-                  <select name="preferredTime" value={form.preferredTime}
-                    onChange={onChange} className={selectCls(form.preferredTime)}>
+                  <select
+                    name="preferredTime"
+                    value={form.preferredTime}
+                    onChange={onChange}
+                    className={selectCls(form.preferredTime)}
+                  >
                     <option value="">Select a time...</option>
                     <option>Morning (8am – 12pm)</option>
                     <option>Afternoon (12pm – 4pm)</option>
@@ -392,8 +504,14 @@ export default function Contact() {
                 <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                   City / ZIP Code <span className="text-secondary">*</span>
                 </label>
-                <input name="cityZip" placeholder="e.g. Algonquin, IL 60102" required
-                  value={form.cityZip} onChange={onChange} className={inputCls} />
+                <input
+                  name="cityZip"
+                  placeholder="e.g. Algonquin, IL 60102"
+                  required
+                  value={form.cityZip}
+                  onChange={onChange}
+                  className={inputCls}
+                />
               </div>
 
               {/* Row 6 — Message */}
@@ -401,14 +519,20 @@ export default function Contact() {
                 <label className="font-semibold text-gray-500 tracking-wide mb-1 block">
                   Anything else? Tell us about the care you need
                 </label>
-                <textarea name="message" rows={5} value={form.message} onChange={onChange}
+                <textarea
+                  name="message"
+                  rows={5}
+                  value={form.message}
+                  onChange={onChange}
                   placeholder="Share any details about the care needed, medical conditions, schedule preferences, or questions you have..."
-                  className={`${inputCls} resize-y`} />
+                  className={`${inputCls} resize-y`}
+                />
               </div>
 
               {status === "error" && (
                 <div className="mb-4 px-4 py-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
-                  Something went wrong. Please try again or call us at +1 (224) 454-4186.
+                  Something went wrong. Please try again or call us at +1 (224)
+                  454-4186.
                 </div>
               )}
 

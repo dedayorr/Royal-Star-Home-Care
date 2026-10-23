@@ -50,9 +50,9 @@ const services = [
     desc: "Dedicated care and support for new mothers and newborns during the critical postpartum period — at home, where comfort matters most.",
   },
   {
-    icon: "🏥",
-    title: "Staffing Nurse",
-    desc: "Qualified and experienced nurses available for placement in healthcare facilities, homes, and institutions to meet staffing needs.",
+    icon: "🏨",
+    title: "Post-Surgical Concierge Care",
+    desc: "Premium one-on-one recovery support after surgery — wound care, pain management, and personalized attention to get you back on your feet safely at home.",
   },
 ];
 
